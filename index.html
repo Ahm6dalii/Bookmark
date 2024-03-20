@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book Mark</title>
+    <!--Google Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div
+      class="screen-modal d-none justify-content-center align-items-center"
+      id="screen-modal"
+    >
+      <div
+        class="bg-light p-2 rounded position-relative px-3"
+        style="max-width: 30%"
+      >
+        <i
+          id="close"
+          class="fa-solid fa-close fa-xl position-absolute end-0 pe-3 py-4"
+        ></i>
+        <div class="py-3">
+          <i class="fa-solid fa-circle" style="color: #f15f5d"></i>
+          <i class="fa-solid fa-circle" style="color: #febe2e"></i>
+          <i class="fa-solid fa-circle" style="color: #4db748"></i>
+        </div>
+        <div class="">
+          <h3 class="h6">
+            Site Name or Url is not valid, Please follow the rules below :
+          </h3>
+          <p class="mt-3">
+            <i class="fa-regular fa-circle-right p-2 text-danger"></i>Site name
+            must contain at least 3 characters
+          </p>
+          <p class="mt-3">
+            <i class="fa-regular fa-circle-right p-2 text-danger"></i>Site name
+            Site URL must be a valid one
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container overflow-auto">
+      <div
+        class="w-75 mx-auto text-center my-5 d-flex justify-content-center align-items-center"
+      >
+        <h1 class="title m-font">Bookmarker</h1>
+      </div>
+
+      <div class="py-4 bm-body">
+        <h2 class="s-font text-center">
+          <i class="fa-solid fa-bookmark"></i> Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+        <div>
+          <div class="mb-4">
+            <label for="bookmarkName" class="pb-2 fw-semibold">
+              <i class="fa-solid fa-book-bookmark pe-2"></i>
+              Site Name</label
+            >
+            <input
+              type="text"
+              oninput="validateNameInput()"
+              class="form-control"
+              id="bookmarkName"
+              name="bookmarkName"
+              placeholder="Bookmark Name"
+            />
+          </div>
+          <div>
+            <label for="bookmarkURL" class="pb-2 fw-semibold">
+              <i class="fa-solid fa-link pe-2"></i>Site URL</label
+            >
+            <input
+              type="text"
+              oninput="validateUrlInput()"
+              class="form-control"
+              id="bookmarkURL"
+              name="bookmarkURL"
+              placeholder="Website URL"
+            />
+          </div>
+          <div class="text-center">
+            <button
+              type="button"
+              onclick="addRecord()"
+              class="btn btn-submit mt-3 px-5 py-2"
+            >
+              Submet
+            </button>
+          </div>
+        </div>
+      </div>
+      <table class="table mt-4 text-center">
+        <thead class="pt-sans700">
+          <th>Index</th>
+          <th>Website Name</th>
+          <th>Visit</th>
+          <th>Delete</th>
+        </thead>
+        <tbody id="tableRecord"></tbody>
+      </table>
+    </div>
+    <script src="./js/main.js"></script>
+  </body>
+</html>
